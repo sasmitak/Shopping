@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Shopping Template</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .brand-title {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .brand-menu {
+            font-size: 20px;
+        }
+
+        .brand-menu span {
+            margin-right: 20px;
+        }
+
+        .brand-icons {
+            font-size: 20px;
+        }
+
+        .brand-icons span {
+            margin-right: 20px;
+        }
+
+        .brand-offer {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .brand-nav {
+            margin-top: 10px;
+            height: 450px;
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+
+        }
+
+        .women {
+            background-image: url("public/images/fashion4.jpg");
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            opacity: 0.6;
+        }
+
+        .women:hover {
+            opacity: 1;
+        }
+
+        .men {
+            background-image: url("public/images/fashion5.jpg");
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            opacity: 0.6;
+        }
+
+        .men:hover {
+            opacity: 1;
+        }
+
+        .kids {
+            background-image: url("public/images/fashion3.jpg");
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            opacity: 0.6;
+        }
+
+        .kids:hover {
+            opacity: 1;
+        }
+
+        .banner-title {
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        .women button {
+            height: 45px;
+            width: 200px;
+            background-color: white;
+        }
+
+        .men button {
+            height: 45px;
+            width: 200px;
+            background-color: white;
+        }
+
+        .kids button {
+            height: 45px;
+            width: 200px;
+            background-color: white;
+        }
+
+        .brand-shipping {
+
+            display: flex;
+        }
+
+        .shipping {
+            padding: 50px;
+        }
+
+        .icon {
+            font-size: 24px;
+            margin-right: 6px;
+        }
+
+        .shipping-header {
+            display: flex;
+        }
+
+        .brand-picks {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .brand-line {
+            display: flex;
+        }
+
+        .centerline {
+            border-top: 1px solid lightgrey;
+            width: 100%;
+            margin-left: 90px;
+            margin-right: 90px;
+        }
+
+        .card-discount {
+            margin: 80px;
+            padding: 25px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            margin-bottom: 10px;
+        }
+
+        .row div {
+            margin: 5px;
+        }
+
+        .card-discount img {
+            transform: translateX(0px);
+            transition: 1s;
+        }
+
+        .card-discount img:hover {
+            transform: translateX(10px);
+            transition: 1s;
+        }
+
+        .brand-collection {
+            background-color: white;
+            color: black;
+            padding: 5px;
+            text-align: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+
+        .brand-collection h1 {
+            display: block;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .brand-sellers {
+            margin-top: 30px;
+        }
+
+        .brand-sellers span {
+            margin-right: 30px;
+        }
+
+        .brand-sellers span.active {
+            color: orangered;
+            text-decoration: underline;
+        }
+
+        .brand-collection div {
+            display: block;
+        }
+
+        .card-images {
+            margin-top: 40px;
+            margin-right: 80px;
+            margin-left: 80px;
+            padding: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            margin-top: 10px;
+        }
+
+        .row div {
+            margin: 5px;
+        }
+
+        .card-images img {
+            transform: translateX(0px);
+            transition: 1s;
+        }
+
+        .card-images img:hover {
+            transform: translateX(10px);
+            transition: 1s;
+        }
+
+        .brand-discover {
+            margin-top: 70px;
+            text-align: center;
+            justify-content: center;
+            text-decoration: underline;
+        }
+
+        .brand-discover:hover {
+            text-decoration: unset;
+        }
+
+        .brand-screen {
+            background-color: white;
+            color: rgb(175, 175, 190);
+            padding: 110px;
+            text-align: center;
+            justify-content: center;
+            margin-top: 80px;
+            background: url(public/images/watch.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 800px;
+        }
+
+        .brand-screen p {
+            text-align: center;
+            font-size: 50px;
+            margin-top: 10px;
+            color: red;
+        }
+
+        .brand-screen button {
+            margin-top: 10px;
+            width: 150px;
+            height: 45px;
+            background-color: rgb(183, 230, 108);
+            color: rgb(26, 25, 25);
+        }
+
+        .button {
+            writing-mode: horizontal-tb;
+            text-rendering: auto;
+            letter-spacing: normal;
+            word-spacing: normal;
+            line-height: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            text-align: center;
+            cursor: default;
+        }
+
+        .brand-buyers {
+            background-color: white;
+            color: black;
+            padding: 5px;
+            text-align: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+
+        .brand-buyers p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        .brand-card {
+            margin-top: 5px;
+            margin-right: 80px;
+            margin-left: 80px;
+            padding: 15px;
+        }
+
+        .brand-cardreview {
+            height: 400px;
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+        }
+
+        .brand-review {
+            box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .brand-review img {
+            float: left;
+            height: 100px;
+            width: 100px;
+            padding: 7px;
+            font-size: 10px;
+            text-align: right;
+        }
+
+        .brand-review img {
+            overflow-clip-margin: content-box;
+            overflow: clip;
+        }
+
+        .brand-review p {
+            font-size: 15px;
+            text-align: justify;
+            margin-top: 10px;
+        }
+
+        .brand-review i {
+            float: left;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .brand-shopper {
+            background-color: white;
+            color: black;
+            padding: 1px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .brand-shopper p {
+            color: gray;
+            font-size: 15px;
+        }
+
+        .card-slide {
+            margin-top: 50px;
+            margin-left: 80px;
+            margin-right: 80px;
+            padding: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-slide row {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            margin-bottom: 10px;
+        }
+
+        .card-slide row div {
+            margin: 5px;
+        }
+
+        .card-slide img {
+            transform: translateX(0px);
+            transition: 1s;
+        }
+
+        .card-slide img:hover {
+            transform: translateX(10px);
+            transition: 1s;
+        }
+
+        .brand-footerhead {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            margin-top: 80px;
+            font-size: 25px;
+        }
+
+        .subscribe {
+            background-color: gray;
+            border: none;
+            color: white;
+            padding: 10px 11px;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            height: 35px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        footer{
+            display: grid;
+            grid-template-columns: 3fr 2.25fr 2.25fr 2.25fr 2.25fr;
+            font-family: arial;
+            background-color: black;
+            color: white;
+            padding: 70px;
+            font-size: 16px;
+        }
+        .footer social-bar{
+            margin-top: 20px;
+            color: gainsboro;       
+        }
+        .footer social-bar span{
+            margin-right: 10px;
+        }
+        .footer-title{
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .footer-title~div{
+            margin-bottom: 10px;
+            color: gainsboro;
+        }
+        .brand-footer{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .section-socialbar{
+            color: white;
+            font-size: 25px;
+            position: fixed;
+            right: 10px;
+            bottom: 5px;
+            background-color: black;
+            padding: 3px;
+        }
+        .section-socialbar div{
+            margin-bottom: 10px;
+        }
+        .brand-footerhead{
+            background-color: black;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            margin-top: 80px;
+            font-size: 25px;
+        }
+        .brand-footerhead span{
+            margin-top: 100px;
+            color: rgb(121, 121, 194);
+        }
+        .brand-footerhead .sub{
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+
+<body class="container-fluid">
+    <header>
+        <div class="brand-title">
+            Shopper
+        </div>
+        <div class="brand-menu">
+            <span>Home</span>
+            <span>Catlog</span>
+            <span>Shop</span>
+            <span>Blog</span>
+            <span>Pages</span>
+            <span>Docs</span>
+        </div>
+        <div class="brand-icons">
+            <span class="bi bi-search"></span>
+            <span class="bi bi-person"></span>
+            <span class="bi bi-heart"></span>
+            <span class="bi bi-cart"></span>
+        </div>
+    </header>
+    <div class="brand-offer">
+        <span class="bi bi-lightning-fill text-warning"></span>HAPPY HOLIDAY DEALS ON EVERYTHING <span
+            class="bi bi-lightning-fill text-warning"></span>
+    </div>
+    <div class="brand-nav">
+        <div class="women">
+            <div class="banner-title">
+                Women
+            </div>
+            <div>
+                <button>Shop Women<span class="bi bi-arrow-right"></span></button>
+            </div>
+        </div>
+        <div class="men">
+            <div class="banner-title">
+                Men
+            </div>
+            <div>
+                <button>Shop Men<span class="bi bi-arrow-right"></span></button>
+            </div>
+        </div>
+        <div class="kids">
+            <div class="banner-title">
+                Kids
+            </div>
+            <div>
+                <button>Shop Kids<span class="bi bi-arrow-right"></span></button>
+            </div>
+        </div>
+    </div>
+    <div class="brand-shipping">
+        <div class="shipping">
+            <div class="shipping-header">
+                <i class="bi bi-truck text-danger" style="font-size:20px"></i>
+
+                <h6>FREE SHIPPING</h6>
+            </div>
+            <p>From all orders above $100</p>
+        </div>
+
+        <div class="shipping">
+            <div class="shipping-header">
+                <i class="bi bi-arrow-left-right text-danger" style="font-size:20px"></i>
+                <h6>FREE RETURNS</h6>
+            </div>
+            <P>Return money within 30 days</P>
+        </div>
+
+        <div class="shipping">
+            <div class="shipping-header">
+                <i class="bi bi-handbag text-danger" style="font-size:20px"></i>
+                <h6>SECURE SHOPPING</h6>
+            </div>
+            <P>You're in safe hands</P>
+        </div>
+
+        <div class="shipping">
+            <div class="shipping-header">
+                <i class="bi bi-tag text-danger" style="font-size:20px"></i>
+                <h6>OVER 10,000 STYLES</h6>
+            </div>
+            <p>We have everything you need</p>
+        </div>
+    </div>
+    <div class="brand-line">
+        <div class="centerline">
+        </div>
+    </div>
+    <div class="brand-picks">
+        <p>NEW COLLECTION</p>
+        <h2>Best Picks 2023</h2>
+        <br>
+        <p>Appear, dry there darkness they're seas, dry waters thing fly midst. Beast,<br> above fly brought Very green.
+        </p>
+    </div>
+    <div class="card-discount">
+        <div class="row">
+            <div>
+                <img src="public/images/cap4.JPG" width="400px" height="450px">
+            </div>
+            <div>
+                <img src="public/images/cap1.JPG" width="700px" height="450px">
+            </div>
+
+        </div>
+        <div class="row">
+            <div>
+                <img src="public/images/Cap2.JPG" width="600px" height="450px">
+            </div>
+            <div>
+                <img src="public/images/cap3.JPG" width="500px" height="450px">
+            </div>
+        </div>
+
+    </div>
+    <div class="brand-collection">
+        <h1>Top Month Sellers</h1>
+        <div class="brand-sellers">
+            <span class="active">women</span>
+            <span>men</span>
+            <span>kids</span>
+        </div>
+    </div>
+
+    <div class="card-images">
+        <div class="row">
+            <div>
+                <img src="public/images/heels.jpg" width="250px" height="300px">
+            </div>
+            <div>
+                <img src="public/images/babycloth.jpg" width="250px" height="300px">
+            </div>
+            <div>
+                <img src="public/images/sneakers.jpg" width="250px" height="300px">
+            </div>
+            <div>
+                <img src="public/images/redheel.jpg" width="250px" height="300px">
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <img src="public/images/formal.jpg" width="250px" height="300px">
+            </div>
+            <div>
+                <img src="public/images/puffy.jpg" width="250px" height="300px">
+            </div>
+            <div>
+                <img src="public/images/fashion8.jpg" width="250px" height="300px">
+            </div>
+            <div>
+                <img src="public/images/casuals.jpg" width="250px" height="300px">
+            </div>
+        </div>
+    </div>
+    <div class="brand-discover">
+        <p>Discover More</p>
+    </div>
+    <div class="brand-screen">
+        <h1>Get -50% From Summer Collection</h1>
+        <button>Shop Now<span class="bi bi-arrow-right"></span>
+        </button>
+    </div>
+    <div class="brand-buyers">
+        <p>WHAT BUYERS SAY</p>
+        <h1>Latest Buyers Review</h1>
+    </div>
+    <div class="brand-cards">
+        <div class="brand-cardreview">
+            <div class="brand-review">
+                <div>
+                    <img src="public/images/redheel.jpg">
+                    <p>Women's Heels</p>
+                    <p>Lowest Price Ever</p>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-half" style="color: orangered;"></i>
+                </div>
+                <br>
+                <p>High-heeled shoes, also known as high heels, are a type of shoe with an angled sole. High heels cause
+                    the legs to appear longer, make the wearer appear taller, and accentuate the calf muscle</p>
+            </div>
+            <div class="brand-review">
+                <div>
+                    <img src="public/images/sweatshirts.jpg">
+                    <p>Men's Sweatshirts</p>
+                    <p>Latest Designs</p>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-half" style="color: orangered;"></i>
+                </div>
+                <br>
+                <p>Sweatshirts are still used for their original purpose as comfortable athletic wear, but they are also
+                    worn for staying warm in cooler temps, repping a collegiate team, or layering to form a fashionable
+                    outfit.</p>
+            </div>
+            <div class="brand-review">
+                <div>
+                    <img src="public/images/kido.jpg">
+                    <p>Kid's Clothing</p>
+                    <p>Newest Arrivals</p>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-fill" style="color: orangered;"></i>
+                    <i class="bi bi-star-half" style="color: orangered;"></i>
+                </div>
+                <br>
+                <p>Children will need to wear clothing which they can manage themselves. This will support their growing
+                    independence in using their self-help skills and ensure they can play unimpeded indoors and outside.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="brand-shopper">
+        <h1>@shopper</h1>
+        <p>Appear, dry there darkness they're seas, dry waters.</p>
+    </div>
+    <div class="card-slide">
+        <div class="row">
+            <div>
+                <img src="public/images/dress.jpg" width="260px" height="300px">
+            </div>
+            <div>
+                <img src="public/images/sneakers.jpg" width="260px" height="300px">
+            </div>
+            <div>
+                <img src="public/images/babycloth.jpg" width="260px" height="300px">
+            </div>
+            <div>
+                <img src="public/images/puffy.jpg" width="260px" height="300px">
+            </div>
+        </div>
+    </div>
+    <div class="brand-footerhead">
+        <span><h2>Want Style Ideas And Treats</h2></span>
+        <div class="sub">
+            <input type="email" id="email" name="email">
+            <button class="subscribe">Subscribe</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-border">
+            <span class="brand-footer">Shopper.</span>
+            <div class="social-bar">
+                <aside>
+                    <a href="#"><span class="bi bi-facebook"></span></a>
+                    <a href="#"><span class="bi bi-twitter"></span></a>
+                    <a href="#"><span class="bi bi-instagram"></span></a>
+                    <a href="#"><span class="bi bi-youtube"></span></a>
+                </aside>
+            </div>
+        </div>
+        <div>
+            <div class="footer-title" style="color: aquamarine;">SUPPORT</div>
+            <div>Contact Us</div>
+            <div>FAQs</div>
+            <div>Size Guide</div>
+            <div>Shipping & Returns</div>
+        </div>
+        <div>
+            <div class="footer-title" style="color: aquamarine;">SHOP</div>
+            <div>Men's Shopping</div>
+            <div>Women's Shopping</div>
+            <div>Kid's Shopping</div>
+            <div>Discounts</div>
+        </div>
+        <div>
+            <div class="footer-title" style="color: aquamarine;">COMPANY</div>
+            <div>Our Story</div>
+            <div>Careers</div>
+            <div>Terms & Conditions</div>
+            <div>Privacy & Cookie Policy</div>
+        </div>
+        <div>
+            <div class="footer-title" style="color: aquamarine;">CONTACT</div>
+            <div>01-202-3434-2626</div>
+            <div>01-303-6767-1818</div>
+            <div>help@shopper.com</div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
